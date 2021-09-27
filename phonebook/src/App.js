@@ -13,7 +13,7 @@ const App = () => {
   const [newName, setNewName] = useState("");
   const [newNumber, setNewNumber] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
-  const personsToShow = persons.filter((person) => person.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  
 
   return (
     <div>
@@ -32,7 +32,7 @@ const App = () => {
 
       <h2>Numbers</h2>
 
-      <PersonList personsToShow={personsToShow} />
+      <PersonList persons={persons} searchTerm={searchTerm} />
     </div>
   );
 };

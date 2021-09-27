@@ -1,4 +1,5 @@
-const PersonList = ({ personsToShow }) => {
+const PersonList = ({ persons, searchTerm }) => {
+    const personsToShow = persons.filter((person) => person.name.toLowerCase().includes(searchTerm.toLowerCase()));
   return (
     <ul>
       {personsToShow.map((person) => (
