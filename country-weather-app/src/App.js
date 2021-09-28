@@ -5,13 +5,6 @@ import axios from "axios";
 import Filter from "./components/Filter"
 import CountryList from "./components/CountryList"
 
-
-
-
-
-
-
-
 function App() {
   const [countries, setCountries] = useState([]);
   const [filterTerm, setFilterTerm] = useState("");
