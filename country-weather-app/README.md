@@ -2,5 +2,5 @@ Practing fetching data from server. Fetched data from Country API and Weather AP
 
 Search results are rendered conditionally, max 10 will be shown at a time, if one country is selected, its details will be displayed. 
 
-
-![image](https://imgur.com/a/even6lF)
+![Alt text](https://i.imgur.com/6xVKYkA.png)
+![Alt text](https://i.imgur.com/p3XjCUo.png)
