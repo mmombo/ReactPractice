@@ -2,28 +2,23 @@ import React, { useState, useEffect } from "react";
 import PersonList from "./components/PersonList";
 import Filter from "./components/Filter";
 import PersonForm from "./components/PersonForm";
-import axios from "axios";
+import personService from "./services/persons";
 
 const App = () => {
-
   const [persons, setPersons] = useState([]);
   const [newName, setNewName] = useState("");
   const [newNumber, setNewNumber] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
-  
+
   useEffect(() => {
-    axios
-      .get('http://localhost:3001/persons')
-      .then(response => {
-        setPersons(response.data)
-      })
-  }, [])
+    personService.getAll().then((data) => {
+      setPersons(data);
+    });
+  }, []);
 
   return (
     <div>
       <h2>Phonebook</h2>
-
-      <Filter setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
 
       <PersonForm
         newName={newName}
@@ -35,8 +30,8 @@ const App = () => {
       />
 
       <h2>Numbers</h2>
-
-      <PersonList persons={persons} searchTerm={searchTerm} />
+      <Filter setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
+      <PersonList persons={persons} searchTerm={searchTerm} setPersons={setPersons} />
     </div>
   );
 };
