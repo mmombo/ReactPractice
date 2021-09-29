@@ -1,6 +1,6 @@
 import personService from "../services/persons";
 
-const PersonForm = ({ newName, setNewName, newNumber, setNewNumber, persons, setPersons }) => {
+const PersonForm = ({ newName, setNewName, newNumber, setNewNumber, persons, setPersons, setNotification }) => {
   const updateNumber = (person) => {
     const isConfirmed = window.confirm(
       `${newName} already exists in the phonebook, would you like to update the number?`
@@ -26,11 +26,20 @@ const PersonForm = ({ newName, setNewName, newNumber, setNewNumber, persons, set
     } else {
       const newPerson = { name: newName, number: newNumber };
 
-      personService.addNew(newPerson).then((returnedPerson) => {
-        setPersons(persons.concat(returnedPerson));
-        setNewName("");
-        setNewNumber("");
-      });
+      personService
+        .addNew(newPerson)
+        .then((returnedPerson) => {
+          setPersons(persons.concat(returnedPerson));
+          setNewName("");
+          setNewNumber("");
+        })
+        .catch((error) => {
+          console.dir(error);
+          setNotification(error.response.data.error);
+          setTimeout(() => {
+            setNotification(null);
+          }, 5000);
+        });
     }
   };
 

@@ -33,13 +33,13 @@
     {
       "content": "",
       "date": "2021-09-28T19:01:34.346Z",
-      "important": true,
+      "important": false,
       "id": 6
     },
     {
       "content": "",
       "date": "2021-09-28T19:01:35.454Z",
-      "important": true,
+      "important": false,
       "id": 7
     }
   ]
