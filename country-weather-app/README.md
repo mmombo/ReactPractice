@@ -6,5 +6,5 @@ When countries are shown, clicking the button beside them will display the data 
 
 At this time I have not styled the app as the focus of the project is using React for functionality. 
 
-![Alt text](https://i.imgur.com/IRmqcny.png)
+![Alt text](https://i.imgur.com/vkLNEeL.png)
 ![Alt text](https://i.imgur.com/p3XjCUo.png)
