@@ -2,16 +2,17 @@ import { useEffect, useState } from "react";
 
 import "./App.css";
 import axios from "axios";
-import Filter from "./components/Filter"
-import CountryList from "./components/CountryList"
+import Filter from "./components/Filter";
+import CountryList from "./components/CountryList";
 
 function App() {
   const [countries, setCountries] = useState([]);
   const [filterTerm, setFilterTerm] = useState("");
 
   useEffect(() => {
-    axios.get("https://restcountries.com/v3.1/all").then((res) => {
-      setCountries(res.data);
+    axios.get("https://restcountries.com/v2/all").then((res) => {
+      
+       setCountries(res.data);
     });
   }, []);
 

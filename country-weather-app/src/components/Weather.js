@@ -6,7 +6,7 @@ const Weather = ({ capital, setWeather, weather }) => {
     console.log("in effect");
     const options = {
       params: {
-        q: capital[0],
+        q: capital,
         units: "metric",
       },
       headers: {
